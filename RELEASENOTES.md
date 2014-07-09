@@ -18,7 +18,18 @@
 # under the License.
 #
 -->
+
 # Cordova-plugman Release Notes
+
+### 0.22.4 (June 23, 2014)
+* wp7 is dead, long live wp7
+
+### 0.22.3 (June 12, 2014)
+* Update cordova-lib dependency to 0.21.5
+* CB-6931: Fix licence headers in plugman
+* CB-6919 help should list windows8 as an available platform, and not wp7
+* adding browserify option
+* CB-6814 Add license to CONTRIBUTING.md
 
 ### 0.22.0 (May 09, 2014)
 * Update plugman cli to use cordova-lib
