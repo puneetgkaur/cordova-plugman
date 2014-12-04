@@ -21,6 +21,7 @@
 
 # Cordova-plugman Release Notes
 
+<<<<<<< HEAD
 ### 0.22.16 (Nov 13, 2014)
 * CB-7079 Allow special characters and digits in id when publishing to plugins registry
 * Update dependencies in package.json
@@ -49,6 +50,8 @@ CB-7383: depend on a newer version of cordova-lib
 * CB-7362 Add Please run npm install from this directory code
 * Remove package.json:scripts.test
 
+=======
+>>>>>>> 663b904de683daf5c0af4d4fa0baa13304d3369e
 ### 0.22.4 (June 23, 2014)
 * wp7 is dead, long live wp7
 
