@@ -18,6 +18,72 @@
 # under the License.
 #
 -->
+# Instruction to setup the development environment
+
+1. install npm
+
+2. Git clone 3 repos : https://github.com/puneetgkaur/cordova-cli, https://github.com/puneetgkaur/cordova-lib, https://github.com/puneetgkaur/cordova-plugman into a directory
+
+3. Run the following commands:
+
+        cd cordova-plugman
+    
+        npm install
+    
+        sudo npm link
+    
+        cd ..
+    
+        cd cordova-lib
+    
+        npm install
+    
+        sudo npm link
+    
+        cd ..
+    
+        cd cordova-cli
+    
+        npm install
+    
+        sudo npm link
+    
+        npm link ../cordova-lib/cordova-lib cordova-lib
+    
+        npm link ../cordova-plugman/ plugman
+
+
+
+# commands used to develop a sugar app using cordova
+
+## creating a project
+
+    cordova create "project directory" "project id" "project name"
+
+
+this creates a cordova project in current dir\"project directory" as you specify above. The project id and name of the project - that is the name of the sugar activity is set using the project name variable.
+
+## Add ths sugar platform to your project
+
+    cordova platform add sugar
+
+After this, develop your sugar activity by modifying the project dir\www folder - place where the web app lies. Once the modification is through, build the project by following commands.
+
+## building the project
+
+### Normal build with no extra toolbox buttons
+When you dont want to add any extra tool button then use the default option and issue the following command :
+
+    cordova build sugar
+
+### Adding extra toolbutton
+
+If you have added extra toolbutton then compile your app using the following command :
+
+    cordova build sugar -- noiframe
+
+
+Once you are succesfully build the project, you would find the .xo kept in project dir\platforms\sugar\cordova directory which you can copy and paste into sugar-build folder and run the command sugar-install-bundle "project name".xo
 
 # plugman
 
@@ -68,12 +134,12 @@ Uninstall a Plugin from a Cordova project:
 
 	plugman uninstall --platform <ios|amazon-fireos|android|blackberry10|wp8> --project <directory> --plugin <id> [--www <directory>] [--plugins_dir <directory>]
 
-<<<<<<< HEAD
+
 For each command (install and uninstall), you must specify a platform and Cordova project location for that platform. You also must specify a plugin, with the different `--plugin` parameter forms being:
 =======
     plugman install --platform <ios|amazon-fireos|android|blackberry10|wp8> --project <directory> --plugin <name|url|path> [--plugins_dir <directory>] [--www <directory>] [--variable <name>=<value> [--variable <name>=<value> ...]]
     plugman uninstall --platform <ios|amazon-fireos|android|blackberry10|wp8> --project <directory> --plugin <id> [--www <directory>] [--plugins_dir <directory>]
->>>>>>> 663b904de683daf5c0af4d4fa0baa13304d3369e
+
 
   * `name`: The directory name where the plugin contents exist. This must be an existing directory under the `--plugins_dir` path (see below for more info) or a plugin in the Cordova registry.
   * `url`: A URL starting with https:// or git://, pointing to a valid git repository that is clonable and contains a `plugin.xml` file. The contents of this repository would be copied into the `--plugins_dir`.
